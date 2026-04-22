@@ -4,10 +4,10 @@ Monorepo for a health analytics web app: Next.js frontend, Express API, and a Py
 
 ## Layout
 
-| Path | Role |
-| --- | --- |
-| `frontend/` | Next.js (App Router) UI |
-| `backend-api/` | Express REST API (`/api/v1`) |
+| Path                   | Role                                                                  |
+| ---------------------- | --------------------------------------------------------------------- |
+| `frontend/`            | Next.js (App Router) UI                                               |
+| `backend-api/`         | Express REST API (`/api/v1`)                                          |
 | `python-data-service/` | CSV cleaning and metric normalization (invoked by API in later tasks) |
 
 ## Prerequisites

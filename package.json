@@ -1,13 +1,21 @@
 {
   "name": "health-analytics-dashboard",
   "private": true,
-  "workspaces": ["frontend", "backend-api"],
+  "workspaces": [
+    "frontend",
+    "backend-api"
+  ],
   "scripts": {
     "dev:web": "npm run dev -w frontend",
     "dev:api": "npm run dev -w backend-api",
     "build": "npm run build -w frontend && npm run build -w backend-api",
     "lint": "npm run lint -w frontend && npm run lint -w backend-api",
     "typecheck": "npm run typecheck -w frontend && npm run typecheck -w backend-api",
-    "check": "npm run lint && npm run typecheck"
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run lint && npm run typecheck"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3"
   }
 }
