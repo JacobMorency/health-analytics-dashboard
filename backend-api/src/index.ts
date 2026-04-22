@@ -2,6 +2,8 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
 
+import { v1HealthRouter } from "./routes/v1/health.js";
+
 const app = express();
 const port = Number(process.env.PORT ?? 4000);
 
@@ -14,9 +16,7 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
-app.get("/api/v1/health", (_req, res) => {
-  res.json({ ok: true, service: "backend-api" });
-});
+app.use("/api/v1", v1HealthRouter);
 
 app.listen(port, () => {
   console.log(`backend-api listening on http://localhost:${port}`);

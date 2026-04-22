@@ -4,10 +4,10 @@ Monorepo for a health analytics web app: Next.js frontend, Express API, and a Py
 
 ## Layout
 
-| Path | Role |
-| --- | --- |
-| `frontend/` | Next.js (App Router) UI |
-| `backend-api/` | Express REST API (`/api/v1`) |
+| Path                   | Role                                                                  |
+| ---------------------- | --------------------------------------------------------------------- |
+| `frontend/`            | Next.js (App Router) UI                                               |
+| `backend-api/`         | Express REST API (`/api/v1`)                                          |
 | `python-data-service/` | CSV cleaning and metric normalization (invoked by API in later tasks) |
 
 ## Prerequisites
@@ -59,6 +59,21 @@ cp frontend/.env.example frontend/.env.local
 cp backend-api/.env.example backend-api/.env
 ```
 
+## Code quality
+
+From the repository root:
+
+```bash
+npm run format       # Prettier — write
+npm run format:check # Prettier — verify only
+npm run lint         # ESLint — frontend + backend-api
+npm run lint:py      # Ruff — python-data-service (requires `.venv` + `pip install -r requirements-dev.txt` there)
+npm run typecheck    # TypeScript — no emit
+npm run check        # format:check + lint + typecheck
+```
+
+Branching, naming, and backend folder conventions are documented in [AGENTS.md](AGENTS.md).
+
 ## Version control
 
-Feature work should land on short-lived branches and merge via PR into `main`. Task 10 scaffolding was introduced on branch `task/10-initialize-project`.
+Feature work should land on short-lived branches (e.g. `task/<n>-<slug>`) and merge via **pull request into `dev`**. Promote **`dev` → `main`** when you want `main` to reflect a stable snapshot. Task 10 scaffolding merged via `task/10-initialize-project`.
