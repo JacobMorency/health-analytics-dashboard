@@ -67,6 +67,7 @@ From the repository root:
 npm run format       # Prettier — write
 npm run format:check # Prettier — verify only
 npm run lint         # ESLint — frontend + backend-api
+npm run lint:py      # Ruff — python-data-service (requires `.venv` + `pip install -r requirements-dev.txt` there)
 npm run typecheck    # TypeScript — no emit
 npm run check        # format:check + lint + typecheck
 ```

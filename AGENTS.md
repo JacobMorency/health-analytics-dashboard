@@ -21,6 +21,8 @@ Conventions for humans and AI assistants working in this repository.
 
 Install Node dependencies from the **repository root** (`npm install`); workspaces are defined in the root `package.json`.
 
+Python formatting and lint use **Ruff** (`python-data-service/pyproject.toml`). From `python-data-service/`, run `pip install -r requirements-dev.txt`, then `ruff check .` / `ruff format .`, or from the repo root run `npm run lint:py`.
+
 ## Naming conventions
 
 - **TypeScript / React** — `PascalCase` for React components and types that behave like components. `camelCase` for functions, variables, and hooks. Use `SCREAMING_SNAKE_CASE` for environment variable names in `.env` examples and config constants where appropriate.
