@@ -1,0 +1,11 @@
+{
+  "name": "health-analytics-dashboard",
+  "private": true,
+  "workspaces": ["frontend", "backend-api"],
+  "scripts": {
+    "dev:web": "npm run dev -w frontend",
+    "dev:api": "npm run dev -w backend-api",
+    "build": "npm run build -w frontend && npm run build -w backend-api",
+    "lint": "npm run lint -w frontend && npm run lint -w backend-api"
+  }
+}
